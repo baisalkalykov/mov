@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './home.scss'
-import axios from 'axios'
+import {useGetMoviesQuery} from "../redux/movie";
 const Home = () => {
- const [movie,setMovie]= useState([])
-    useEffect (()=>{
-        axios('http://localhost:3000/movies')
-        .then(({data})=>setMovie(data))
-    },[])
+    const {data=[]} = useGetMoviesQuery()
+    console.log(data)
+
     return (
     <section className='home'>
     <div className='home__container'>
         <div className='home__cards'>
+
              {
-                movie.map((el)=>
+                data.map((el)=>
                  <div className='home__card'>
                     <img src={el.image}/>
                     <h3>{el.title}</h3>
@@ -20,6 +19,8 @@ const Home = () => {
                  </div>
                 )
              }
+
+
         </div>
     </div>
     </section>
