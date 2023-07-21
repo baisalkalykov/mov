@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    background: #1E2538;
+    &__container{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 100px;
+    }
+    &__card h3{
+        font-size: 18px;
+        font-weight: 700;
+        color: #FFF;
+    }
+    &__card p{
+        color: #F2F60F;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+}
